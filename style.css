@@ -37,27 +37,50 @@
 
 .sidebar-header {
     font-weight: bold;
-    font-size: 25px;
+    font-size: 2rem;
     display: flex;
     justify-content: start;
     align-items: center;
     padding: 8px;
+    margin-right: 1rem;
+    cursor: pointer;
 }
 
-.logo {
-    min-width: 20%;
+.sidebar img {
+    height: 3rem;
+    margin-right: 1.25rem;
 }
 
-.sidebar li {
-    margin-left: 45px;
+.sidebar ul li {
+    display: flex;
+    margin-left: 2rem;
     list-style-type: none;
-    padding-bottom: 15px;
+    padding-bottom: 10px;
+    
+}
+
+ul li:hover {
+    cursor: pointer;
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08);
+}
+
+ul li p:hover {
+    border-bottom: 2px solid white;
+}
+
+.nav-top img, 
+.nav-bottom img{
+    height: 1.5rem;
+    cursor: pointer;
+    margin-right: 1.25rem;
 }
 
 /* Header section */
 
 .header {
-    padding: 1.5rem;
+    padding: 1rem 1rem 0;
+
 }
 
 .top-header {
@@ -70,6 +93,8 @@
     display: flex;
     grid-area: 1/1/2/2;
     padding: 10px 0px;
+    margin-left: 2rem;
+
 }
 
 .search-img input{
@@ -99,7 +124,18 @@
     color: var(--dark-color);
 }
 
-.profile-bar img {
+.notif {
+    height: 1.75rem;
+    width: 1.75rem;
+    margin-right: 1.5rem;
+    transition: transform 0.4s ease-in-out;
+}
+
+.notif:hover {
+    transform: rotate(360deg) scale(1.2);
+}
+
+.profile-pic {
     background-color: #8b5cf6;
     padding: 10px;
     border-radius: 25px;
@@ -108,12 +144,19 @@
     width: 3.5rem;
 }
 
+.profile-pic:hover,
+.to-click:hover,
+.head-btn:hover {
+    cursor: pointer;
+    -webkit-transform: scale(1.08);
+    transform: scale(1.08);
+}
 
 .bottom-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end;
-    margin: 20px 40px;
+    align-items: flex-start;
+    margin: 0 30px;
 
 }
 
@@ -124,6 +167,7 @@
     gap: 1.5rem;
     font-weight: bold;
     width: 40vw;
+
 }
 
 .profile-display img {
@@ -147,21 +191,13 @@
 }
 
 .update-status {
-    
     width: 25vw;
     color: var(--dark-color);
-    
-
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    gap: 2rem;   
+    align-items: center;justify-content: center;
+    gap: 2rem; 
+    margin-top: 1rem;
+
 }
 
 .update-status button {
@@ -181,6 +217,7 @@
 .main-section {
     background-color: var(--bg-light-color);
     padding: 25px 50px 75px; 
+    height: 100%;
     
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -203,15 +240,33 @@
 .proj-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
-    gap: 20px;
-     
+    gap: 30px;
+    height: 95%;
+  
 }
 
 .project {
     background-color: var(--light-color);
-    height: minmax(250px, auto); /* check again */
-    padding: 30px 20px 20px;
+
+    height: minmax(200px, 300px); 
+
     border-radius: 15px;
+
+    display: grid;
+    grid-template-columns: 1rem 1fr;
+    grid-template-rows: 1fr auto;
+    cursor: pointer;
+}
+
+.color-block {
+    grid-row: 1 / 3;
+    background:linear-gradient(var(--side-color),var(--main-color));
+    border-radius: 20px 0 0 20px;
+}
+
+.proj-text {
+    padding: 1rem 1rem 0;
+    
 }
 
 .proj-header {
@@ -220,14 +275,23 @@
     font-weight: bold;
 }
 
-.proj-nav li {
-    list-style-type: none;
+.proj-nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    padding: 1rem;
+ 
+}
 
+.proj-nav img {
+    height: 1.5rem;
+    width: 1.5rem;
+    
 }
 
 .announcement {
-    width: minmax(200px, 1fr); /* check again */
     margin-bottom: 1.5rem;
+    
 }
 
 .ann-text, .tre-text {
@@ -251,6 +315,16 @@
     display: flex;
     align-items: center;
 
+}
+
+
+.proj-nav img:hover,
+.ann-text:hover,
+.tre-profile:hover
+ {
+    cursor: pointer;
+    -webkit-transform: scale(1.07);
+    transform: scale(1.07);
 }
 
 .tre-profile img {
